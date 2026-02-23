@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Meat International | Premium Quality Butcher</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+        
+        /* Header & Navigation */
+        header { background: #1a1a1a; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #cc0000; }
+        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover; background-position: center;
+            height: 80vh; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; color: white; text-align: center;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+        .btn { background: #cc0000; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+
+        /* Info Section */
+        .info-bar { background: #8b0000; color: white; padding: 20px; text-align: center; display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        
+        /* Products Placeholder */
+        .products { padding: 50px 5%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card h3 { color: #8b0000; }
+
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">US MEAT <span style="color:white">INTERNATIONAL</span></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Premium Cuts, World-Class Quality</h1>
+        <p>Serving Decatur with the finest meats since day one.</p>
+        <a href="tel:4042965116" class="btn">Call to Order Now</a>
+    </section>
+
+    <div class="info-bar">
+        <div>📍 4604 Memorial Drive, Decatur, GA 30032</div>
+        <div>📞 (404) 296-5116</div>
+        <div>⏰ Open Daily</div>
+    </div>
+
+    <section class="products" id="products">
+        <h2>Our Signature Selections</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Premium Beef</h3>
+                <p>Ribeye, Sirloin, and Brisket cut to perfection.</p>
+            </div>
+            <div class="card">
+                <h3>Fresh Poultry</h3>
+                <p>Farm-fresh chicken and turkey daily.</p>
+            </div>
+            <div class="card">
+                <h3>Specialty Cuts</h3>
+                <p>International favorites and custom butchery.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 US Meat International. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
