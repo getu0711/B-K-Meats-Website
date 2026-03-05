@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B & K Meats | USDA Premium Processor</title>
+    <title>B & K Meats | USDA Premium Processor Decatur</title>
+    <meta name="description" content="B & K Meats - Decatur's gold standard for premium USDA meats. Specializing in Oxtails, Goat Meat, and custom butchery since 2012.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #d62828; --dark: #0a0a0a; --accent: #1c1c1c; --gold: #c5a059; --white: #ffffff; }
@@ -13,7 +14,8 @@
         header { background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); color:#fff; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; position:fixed; width:100%; top:0; z-index:2000; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .logo-text { font-weight: 900; font-size: 24px; letter-spacing: 1px; color: #fff; text-decoration: none; }
         .logo-text span { color: var(--primary); }
-        nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:600; font-size: 12px; text-transform: uppercase; }
+        nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:600; font-size: 12px; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
 
         .hero { 
             height: 70vh; 
@@ -29,38 +31,31 @@
         .center-heading h2 { font-family: 'Playfair Display', serif; font-size: 36px; position: relative; padding-bottom: 15px; }
         .center-heading h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--primary); margin: 10px auto; }
 
-        .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .reputation-list { list-style: none; margin-top: 20px; }
-        .reputation-list li { margin-bottom: 12px; padding-left: 30px; position: relative; font-weight: 600; }
-        .reputation-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
+        .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .reputation-list { list-style: none; }
+        .reputation-list li { margin-bottom: 15px; padding-left: 35px; position: relative; font-weight: 500; font-size: 15px; }
+        .reputation-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 900; font-size: 20px; }
 
-        /* Gallery Transitions */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
         .gallery-item { height: 350px; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.5s ease; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .gallery-item:hover { transform: translateY(-10px); }
         .gallery-item:hover img { transform: scale(1.1); }
 
-        /* Wholesale Form */
         .wholesale-box { background: var(--accent); padding: 40px; border-radius: 4px; max-width: 850px; margin: auto; color: white; }
         .product-check-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 20px 0; }
         .check-item { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); font-size: 14px; }
         .check-item input { margin-right: 10px; accent-color: var(--primary); }
-        .input-style { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 12px; margin-bottom: 15px; width: 100%; }
-        .btn-submit { background: var(--primary); color: white; border: none; padding: 15px; width: 100%; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        .input-style { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 12px; margin-bottom: 15px; width: 100%; border-radius: 4px; }
+        .btn-submit { background: var(--primary); color: white; border: none; padding: 15px; width: 100%; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; border-radius: 4px; }
+        .btn-submit:hover { background: #ff3333; }
 
-        /* Footer & GPS Button */
         footer { background: var(--dark); color: #fff; padding: 60px 10% 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        .gps-btn { display: inline-block; background: var(--gold); color: #000; padding: 12px 20px; text-decoration: none; font-weight: 800; border-radius: 4px; margin-top: 15px; transition: 0.3s; }
-        .gps-btn:hover { background: #fff; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .hours-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .closed { color: var(--primary); font-weight: 700; }
-        .map-container { width: 100%; height: 300px; border-radius: 4px; overflow: hidden; filter: grayscale(1) invert(0.9); margin-top: 20px; }
+        
+        .call-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 800; z-index: 2000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 10px; }
 
-        .call-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 800; z-index: 2000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
-        @media (max-width: 768px) { .history-grid { grid-template-columns: 1fr; } .section { padding: 50px 5%; } }
+        @media (max-width: 768px) { .history-grid { grid-template-columns: 1fr; } .section { padding: 50px 5%; } header { padding: 15px 5%; } }
     </style>
 </head>
 <body>
@@ -80,46 +75,50 @@
 </section>
 
 <section class="section" id="history">
-    <div class="center-heading"><h2>Our History</h2></div>
+    <div class="center-heading">
+        <h2>Our History</h2>
+        <p style="color: var(--gold); font-weight: 800; letter-spacing: 2px; margin-top: -10px; font-size: 12px;">PREMIUM MEATS, EXPERTLY CRAFTED — SERVING DECATUR SINCE 2012</p>
+    </div>
     <div class="history-grid">
         <div>
-            <p>At B & K Meats, we’ve been proud to serve the Decatur, GA community with the highest quality meats and exceptional customer service. From our founding, our mission has been simple: provide fresh, premium cuts while ensuring every customer leaves satisfied.</p>
+            <p style="margin-bottom: 15px; font-size: 16px; line-height: 1.8;">
+                Since 2012, <strong>B & K Meats</strong> has been the gold standard for premium meats in Decatur, GA. We are dedicated to delivering exceptional quality, precision-cut meats, and unmatched customer service.
+            </p>
+            <p>Whether you’re preparing a family feast or fueling your next backyard BBQ, we set the standard for quality, taste, and trust.</p>
         </div>
         <ul class="reputation-list">
-            <li>USDA-Certified Quality</li>
-            <li>Expert Butchery & Custom Cuts</li>
-            <li>Locally Owned & Community Focused</li>
+            <li><strong>USDA-Certified Premium Cuts:</strong> Only the finest beef, pork, and poultry.</li>
+            <li><strong>Expert Butchery:</strong> Precision and care in every slice.</li>
+            <li><strong>Local Community Focus:</strong> Serving Decatur with dedication and integrity.</li>
         </ul>
     </div>
 </section>
 
 <section class="section" id="gallery" style="background: #f9f9f9;">
-    <div class="center-heading"><h2>Our USDA Facility & Products</h2></div>
+    <div class="center-heading">
+        <h2>Our Premium Products</h2>
+        <p style="color: var(--gold); font-weight: 600; font-size: 14px; margin-top: -10px;">USDA QUALITY SELECTION</p>
+    </div>
     <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="interior.png" alt="B & K Meats Clean USDA Processing Facility" style="object-fit: cover;">
-        </div>
-        <div class="gallery-item"><img src="logo2.png" alt="Fresh Premium Cuts"></div>
-        <div class="gallery-item"><img src="logo3.png" alt="Specialty Meats Gallery"></div>
-        
-        <div class="gallery-item"><img src="logo4.png" alt="USDA Inspected Meat Selection"></div>
-        <div class="gallery-item"><img src="logo6.png" alt="Premium Oxtail and Goat Cuts"></div>
+        <div class="gallery-item"><img src="logo.png" alt="B & K Meats"></div>
+        <div class="gallery-item"><img src="logo2.png" alt="Fresh Oxtails"></div>
+        <div class="gallery-item"><img src="logo3.png" alt="Goat Meat"></div>
+        <div class="gallery-item"><img src="logo4.png" alt="USDA Choice"></div>
+        <div class="gallery-item"><img src="logo6.png" alt="Premium Cuts"></div>
     </div>
 </section>
 
 <section class="section" id="wholesale">
     <div class="wholesale-box">
         <h2 style="text-align:center; margin-bottom:20px;">Wholesale Inquiry</h2>
-        <form>
-            <input type="text" placeholder="Name / Business" class="input-style" required>
+        <form action="https://formspree.io/f/endaledinnsa32@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Name / Business" class="input-style" required>
+            <input type="email" name="_replyto" placeholder="Your Email Address" class="input-style" required>
             <div class="product-check-grid">
-                <label class="check-item"><input type="checkbox"> Oxtails</label>
-                <label class="check-item"><input type="checkbox"> Goat Meat</label>
-                <label class="check-item"><input type="checkbox"> Cow Foot</label>
-                <label class="check-item"><input type="checkbox"> Mutton</label>
-                <label class="check-item"><input type="checkbox"> Lamb</label>
-                <label class="check-item"><input type="checkbox"> Beef</label>
-                <label class="check-item"><input type="checkbox"> Red Snapper</label>
+                <label class="check-item"><input type="checkbox" name="product" value="Oxtails"> Oxtails</label>
+                <label class="check-item"><input type="checkbox" name="product" value="Goat"> Goat Meat</label>
+                <label class="check-item"><input type="checkbox" name="product" value="Cow Foot"> Cow Foot</label>
+                <label class="check-item"><input type="checkbox" name="product" value="Red Snapper"> Red Snapper</label>
             </div>
             <button type="submit" class="btn-submit">Submit Request</button>
         </form>
@@ -129,22 +128,21 @@
 <footer>
     <div class="footer-grid">
         <div>
-            <h3 style="color: var(--gold);">LOCATION</h3>
+            <h3 style="color: var(--gold); margin-bottom: 15px;">LOCATION & CONTACT</h3>
             <p>4604 Memorial Drive<br>Decatur, GA 30032</p>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=4604+Memorial+Drive+Decatur+GA+30032" class="gps-btn" target="_blank">📍 OPEN IN GPS</a>
+            <p style="margin-top: 10px;"><strong>Phone:</strong> 404-642-4424</p>
+            <p><strong>Email:</strong> endaledinnsa32@gmail.com</p>
         </div>
         <div>
-            <h3 style="color: var(--gold);">HOURS</h3>
+            <h3 style="color: var(--gold); margin-bottom: 15px;">BUSINESS HOURS</h3>
             <div class="hours-row"><span>Mon - Sat</span><span>9:00 AM - 7:00 PM</span></div>
-            <div class="hours-row closed"><span>Sunday</span><span>CLOSED</span></div>
+            <div class="hours-row" style="color: var(--primary); font-weight: bold;"><span>Sunday</span><span>CLOSED</span></div>
         </div>
     </div>
-    <div class="map-container">
-        <iframe width="100%" height="100%" frameborder="0" src="https://maps.google.com/maps?q=4604%20Memorial%20Drive%20Decatur%20GA&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
-    </div>
+    <p style="text-align: center; margin-top: 40px; font-size: 12px; color: #555;">© 2026 B & K Meats. All Rights Reserved.</p>
 </footer>
 
-<a href="tel:4042965116" class="call-btn">📞 CALL SHOP</a>
+<a href="tel:4046424424" class="call-btn">📞 CALL SHOP</a>
 
 </body>
 </html>
